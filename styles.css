@@ -485,6 +485,60 @@ h1 {
     var(--paper);
 }
 
+.birthday-people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+.birthday-person-card {
+  position: relative;
+  min-height: clamp(360px, 38vw, 540px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: #1d1c20;
+  box-shadow: var(--shadow);
+}
+
+.birthday-person-card a {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: block;
+  padding: 5rem 1.25rem 1.25rem;
+  color: #fff9f3;
+  text-decoration: none;
+  background: linear-gradient(0deg, rgba(10, 10, 12, 0.78), rgba(10, 10, 12, 0));
+}
+
+.birthday-person-card span {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.9;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.34);
+}
+
+.person-carousel,
+.person-carousel img {
+  position: absolute;
+  inset: 0;
+}
+
+.person-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 180ms ease, transform 500ms ease;
+}
+
+.person-carousel img.is-swapping {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
 .party-details {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1083,11 +1137,16 @@ h1 {
     min-height: auto;
   }
 
+  .birthday-people,
   .party-details,
   .menu-panel ul,
   .game-layout,
   .player-form-row {
     grid-template-columns: 1fr;
+  }
+
+  .birthday-person-card {
+    min-height: 340px;
   }
 
   .party-detail {

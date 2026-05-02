@@ -1,4 +1,4 @@
-window.nataliePhotos = Object.freeze([
+const nataliePhotos = [
   "images/IMG_2264.jpeg",
   "images/DSC_9556.jpeg",
   "images/IMG_5276.jpeg",
@@ -41,4 +41,49 @@ window.nataliePhotos = Object.freeze([
   "images/IMG_1098.jpeg",
   "images/IMG_7530.jpeg",
   "images/lp_image (2).jpeg"
-]);
+];
+
+const coreyPhotos = [
+  "corey_gallery/IMG_0024.jpeg",
+  "corey_gallery/IMG_0219.jpeg",
+  "corey_gallery/IMG_0652.jpeg",
+  "corey_gallery/IMG_2589.jpeg",
+  "corey_gallery/IMG_2592.jpeg",
+  "corey_gallery/IMG_3255.jpeg",
+  "corey_gallery/IMG_4130.jpeg",
+  "corey_gallery/IMG_4622.jpeg",
+  "corey_gallery/IMG_4735.jpeg"
+];
+
+const griffPhotos = [
+  "griff_gallery/71466712471__602868E9-D4FC-474D-907F-831A758D4BBA.jpeg",
+  "griff_gallery/IMG_0888.jpeg",
+  "griff_gallery/IMG_0921.jpeg",
+  "griff_gallery/IMG_1214.jpeg",
+  "griff_gallery/IMG_1386.jpeg",
+  "griff_gallery/IMG_2064.jpeg",
+  "griff_gallery/IMG_2277.jpeg",
+  "griff_gallery/IMG_2769.jpeg",
+  "griff_gallery/IMG_6723.jpeg",
+  "griff_gallery/IMG_8231.jpeg"
+];
+
+window.birthdayPeople = Object.freeze({
+  natalie: Object.freeze({
+    key: "natalie",
+    name: "Natalie",
+    photos: Object.freeze(nataliePhotos)
+  }),
+  corey: Object.freeze({
+    key: "corey",
+    name: "Corey",
+    photos: Object.freeze(coreyPhotos)
+  }),
+  griff: Object.freeze({
+    key: "griff",
+    name: "Griff",
+    photos: Object.freeze(griffPhotos)
+  })
+});
+
+window.nataliePhotos = window.birthdayPeople.natalie.photos;

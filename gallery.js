@@ -1,5 +1,15 @@
-const galleryPhotos = window.nataliePhotos || [];
+const people = window.birthdayPeople || {
+  natalie: {
+    name: "Natalie",
+    photos: window.nataliePhotos || []
+  }
+};
+const requestedPerson = new URLSearchParams(window.location.search).get("person") || "natalie";
+const activePerson = people[requestedPerson] || people.natalie;
+const galleryPhotos = activePerson.photos || [];
 const galleryGrid = document.getElementById("gallery-grid");
+const galleryTitle = document.getElementById("gallery-title");
+const galleryCopy = document.getElementById("gallery-copy");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxCount = document.getElementById("lightbox-count");
@@ -10,7 +20,14 @@ const nextButton = document.getElementById("lightbox-next");
 let activePhotoIndex = 0;
 
 function photoLabel(index) {
-  return `Natalie photo ${index + 1}`;
+  return `${activePerson.name} photo ${index + 1}`;
+}
+
+function updateGalleryIntro() {
+  document.title = `${activePerson.name}'s Birthday Gallery`;
+  galleryTitle.textContent = `${activePerson.name}'s Photo Gallery`;
+  galleryCopy.textContent = `Every favorite picture of ${activePerson.name} in one place, with a full-screen view for slowing down on the best ones.`;
+  galleryGrid.setAttribute("aria-label", `${activePerson.name} photo gallery`);
 }
 
 function renderGallery() {
@@ -87,4 +104,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+updateGalleryIntro();
 renderGallery();
