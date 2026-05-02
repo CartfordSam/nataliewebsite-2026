@@ -43,7 +43,7 @@
         <h1>Two Truths and a Lie</h1>
         <p>
           Pick the lie in each round. The options shuffle every time, and the
-          leaderboard keeps each player's best percentage on this device.
+          final screen can send the score to Sam.
         </p>
       </section>
 
@@ -75,7 +75,10 @@
             <p class="detail-label">Final Score</p>
             <h2 id="result-score">0%</h2>
             <p id="result-detail"></p>
-            <button id="play-again" type="button">Play Again</button>
+            <div class="result-actions">
+              <a class="email-score" id="email-score" href="mailto:cartford@hey.com">Email Score</a>
+              <button id="play-again" type="button">Play Again</button>
+            </div>
           </div>
         </article>
 

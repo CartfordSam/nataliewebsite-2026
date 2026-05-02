@@ -660,6 +660,7 @@ h1 {
 .player-form button,
 .next-question,
 .result-panel button,
+.result-panel a,
 .leaderboard-header button {
   min-height: 44px;
   border: 0;
@@ -669,6 +670,7 @@ h1 {
   font: inherit;
   font-weight: 800;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .player-form button {
@@ -686,6 +688,7 @@ h1 {
 .quiz-option:focus-visible,
 .next-question:focus-visible,
 .result-panel button:focus-visible,
+.result-panel a:focus-visible,
 .leaderboard-header button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
@@ -768,9 +771,25 @@ h1 {
   font-weight: 800;
 }
 
-.next-question,
-.result-panel button {
+.next-question {
   padding: 0 1.3rem;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.result-panel a,
+.result-panel button {
+  display: inline-grid;
+  place-items: center;
+  padding: 0 1.3rem;
+}
+
+.result-panel a {
+  background: var(--sage);
 }
 
 .next-question:disabled {

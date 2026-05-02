@@ -1,5 +1,6 @@
 const QUIZ_SOURCE = "two_truths_and_a_lie.md";
 const LEADERBOARD_KEY = "natalieTwoTruthsLeaderboard.v1";
+const SCORE_EMAIL = "cartford@hey.com";
 const FALLBACK_MARKDOWN = `# Two Truths and a Lie
 
 A Natalie Trivia Game
@@ -68,6 +69,7 @@ const quizFeedback = document.getElementById("quiz-feedback");
 const nextQuestionButton = document.getElementById("next-question");
 const resultScore = document.getElementById("result-score");
 const resultDetail = document.getElementById("result-detail");
+const emailScoreLink = document.getElementById("email-score");
 const playAgainButton = document.getElementById("play-again");
 const leaderboardList = document.getElementById("leaderboard-list");
 const emptyLeaderboard = document.getElementById("empty-leaderboard");
@@ -79,6 +81,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let playerName = "";
 let answeredCurrentQuestion = false;
+let selectedAnswers = [];
 
 function shuffle(items) {
   for (let i = items.length - 1; i > 0; i -= 1) {
@@ -246,6 +249,7 @@ function startQuiz(event) {
   }));
   currentQuestionIndex = 0;
   score = 0;
+  selectedAnswers = [];
 
   setActiveView("quiz");
   renderQuestion();
@@ -280,11 +284,22 @@ function answerQuestion(option, selectedButton) {
     return;
   }
 
+  const question = activeQuestions[currentQuestionIndex];
+  const correctAnswer = question.options.find((candidate) => candidate.isLie);
+  const isCorrect = option.isLie;
+
   answeredCurrentQuestion = true;
   nextQuestionButton.disabled = false;
   progressBar.style.width = `${((currentQuestionIndex + 1) / activeQuestions.length) * 100}%`;
 
-  if (option.isLie) {
+  selectedAnswers.push({
+    questionNumber: question.number,
+    selectedAnswer: option.text,
+    correctAnswer: correctAnswer.text,
+    isCorrect
+  });
+
+  if (isCorrect) {
     score += 1;
     selectedButton.classList.add("is-correct");
     quizFeedback.textContent = "Correct. That one was the lie.";
@@ -298,12 +313,33 @@ function answerQuestion(option, selectedButton) {
   optionList.querySelectorAll(".quiz-option").forEach((button) => {
     button.disabled = true;
 
-    if (activeQuestions[currentQuestionIndex].options.find((candidate) => (
+    if (question.options.find((candidate) => (
       candidate.text === button.textContent && candidate.isLie
     ))) {
       button.classList.add("is-correct");
     }
   });
+}
+
+function buildScoreEmailHref(percent) {
+  const subject = `Natalie quiz score: ${playerName} - ${percent}%`;
+  const answerLines = selectedAnswers.map((answer) => (
+    `Q${answer.questionNumber}: ${answer.isCorrect ? "correct" : "wrong"}\n` +
+    `Picked: ${answer.selectedAnswer}\n` +
+    `Lie: ${answer.correctAnswer}`
+  ));
+  const body = [
+    `${playerName} finished Natalie's Two Truths and a Lie quiz.`,
+    "",
+    `Score: ${score}/${activeQuestions.length}`,
+    `Percentage: ${percent}%`,
+    `Submitted: ${new Date().toLocaleString()}`,
+    "",
+    "Answers:",
+    answerLines.join("\n\n")
+  ].join("\n");
+
+  return `mailto:${SCORE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function showResults() {
@@ -312,6 +348,7 @@ function showResults() {
   recordScore();
   resultScore.textContent = `${percent}%`;
   resultDetail.textContent = `${playerName}, you got ${score} out of ${activeQuestions.length} correct.`;
+  emailScoreLink.href = buildScoreEmailHref(percent);
   setActiveView("result");
 }
 
