@@ -49,5 +49,5 @@ L: Natalie has seen a ghost
 
 ## Q10
 T: Happy Birthday Natalie
-T: Happy Birthday Cory
+T: Happy Birthday Corey
 L: Happy Birthday Santa Claus
