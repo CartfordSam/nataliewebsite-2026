@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy Birthday Natalie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-nav home-nav">
+      <a class="brand-link" href="index.html">Natalie</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Birthday</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="party.html">Party</a>
+        <a href="ins-outs.html">In/Out</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-label="Birthday greeting">
+        <div class="slideshow" aria-hidden="true">
+          <div class="slide slide-active" id="active-slide">
+            <img class="slide-backdrop" alt="">
+            <img class="slide-photo" alt="">
+          </div>
+          <div class="slide" id="next-slide">
+            <img class="slide-backdrop" alt="">
+            <img class="slide-photo" alt="">
+          </div>
+          <div class="image-vignette"></div>
+        </div>
+
+        <div class="confetti-layer" aria-hidden="true">
+          <span style="--x: 7%; --delay: 0s; --spin: 12deg;"></span>
+          <span style="--x: 18%; --delay: 1.2s; --spin: -24deg;"></span>
+          <span style="--x: 29%; --delay: 0.4s; --spin: 30deg;"></span>
+          <span style="--x: 41%; --delay: 2s; --spin: -18deg;"></span>
+          <span style="--x: 53%; --delay: 0.8s; --spin: 22deg;"></span>
+          <span style="--x: 66%; --delay: 1.8s; --spin: -32deg;"></span>
+          <span style="--x: 77%; --delay: 0.2s; --spin: 16deg;"></span>
+          <span style="--x: 90%; --delay: 1.5s; --spin: -14deg;"></span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">May 2</p>
+          <h1>Happy Birthday Natalie</h1>
+          <p class="hero-note">
+            A whole day for your laugh, your light, and every little thing that
+            makes you unforgettable.
+          </p>
+        </div>
+      </section>
+
+      <section class="birthday-band" aria-label="Birthday message">
+        <div class="message-lockup">
+          <p class="kicker">For May 2, and every day after</p>
+          <h2>You deserve the sweetest celebration.</h2>
+          <p>
+            I hope today feels full of warmth, good surprises, and the kind of
+            joy you bring into every room.
+          </p>
+        </div>
+        <div class="detail-grid" aria-hidden="true">
+          <span>Bright</span>
+          <span>Funny</span>
+          <span>Loved</span>
+        </div>
+      </section>
+
+      <section class="field-notes" aria-label="Natalie field notes">
+        <div class="field-notes-header">
+          <p class="kicker">Field Notes</p>
+          <h2>Learnings and forbidden topics.</h2>
+        </div>
+
+        <div class="field-note-grid">
+          <article class="note-card learning-card">
+            <h3>Learnings From Last Year</h3>
+            <ul>
+              <li>Quite a bit.</li>
+              <li>"It's not that serious."</li>
+              <li>Be around people who make you feel good.</li>
+              <li>It's okay to stick up for yourself.</li>
+              <li>If you're making a slaw, you have to massage it with your hands.</li>
+              <li>This ain't a race.</li>
+            </ul>
+          </article>
+
+          <article class="note-card dont-talk-card">
+            <h3>Don't Talk About</h3>
+            <ul>
+              <li>The San Andreas Fault</li>
+              <li>Yellowstone Supervolcano</li>
+              <li>Jet stream collapse</li>
+              <li>Trump (unless he died)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="photos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

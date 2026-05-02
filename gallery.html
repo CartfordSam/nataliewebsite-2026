@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalie's Birthday Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="gallery-body">
+    <header class="site-nav">
+      <a class="brand-link" href="index.html">Natalie</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Birthday</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="party.html">Party</a>
+        <a href="ins-outs.html">In/Out</a>
+      </nav>
+    </header>
+
+    <main class="gallery-page">
+      <section class="gallery-intro" aria-label="Photo gallery introduction">
+        <p class="eyebrow dark-eyebrow">All the pictures</p>
+        <h1>Photo Gallery</h1>
+        <p>
+          Every favorite picture in one place, with a full-screen view for
+          slowing down on the best ones.
+        </p>
+      </section>
+
+      <section class="gallery-grid" id="gallery-grid" aria-label="Natalie photo gallery"></section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+      <button class="lightbox-close" id="lightbox-close" type="button">Close</button>
+      <button class="lightbox-button lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <img id="lightbox-image" alt="Natalie photo">
+      <button class="lightbox-button lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+      <p class="lightbox-count" id="lightbox-count"></p>
+    </div>
+
+    <script src="photos.js"></script>
+    <script src="gallery.js"></script>
+  </body>
+</html>
