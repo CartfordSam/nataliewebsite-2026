@@ -38,16 +38,11 @@ T: Natalie is alergic to kiwi skins
 L: Natalie is alergic to latex (condoms lol)
 
 ## Q8
-T: Natalie has been involved in a threesome
-T: Natalie has testified in a domestic dispute
-L: Natalie has been charged with lewd behavior on State Park grounds
-
-## Q9 
 T: Natalie did every NYT crossword in 2024
 T: Natalie's Dad took us on a roadtrip to see bigfoot
 L: Natalie has seen a ghost
 
-## Q10
+## Q9
 T: Happy Birthday Natalie
 T: Happy Birthday Cory
 L: Happy Birthday Santa Claus
