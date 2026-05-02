@@ -31,7 +31,7 @@ T: Natalie loves Fleet Foxes
 L: Natalie loves Mumford & Sons
 
 ## Q6
-T: Natalie has ingested Potassium permanganate
+T: Natalie has ingested Potassium Permanganate
 T: Natalie has ingested Hydrogen Peroxide
 L: Natalie has ingested Potassium Nitrate
 
