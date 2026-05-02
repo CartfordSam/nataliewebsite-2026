@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natalie's Birthday Games</title>
+    <meta name="description" content="Natalie's birthday games.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Happy Birthday Natalie">
+    <meta property="og:title" content="Natalie's Birthday Games">
+    <meta property="og:description" content="Two Truths and a Lie for Natalie.">
+    <meta property="og:url" content="https://natalienatalie.com/games.html">
+    <meta property="og:image" content="https://natalienatalie.com/images/IMG_3136.jpeg">
+    <meta property="og:image:secure_url" content="https://natalienatalie.com/images/IMG_3136.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="3456">
+    <meta property="og:image:height" content="5184">
+    <meta property="og:image:alt" content="Natalie">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Natalie's Birthday Games">
+    <meta name="twitter:description" content="Two Truths and a Lie for Natalie.">
+    <meta name="twitter:image" content="https://natalienatalie.com/images/IMG_3136.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="game-body">
+    <header class="site-nav">
+      <a class="brand-link" href="index.html">Natalie</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Birthday</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="party.html">Party</a>
+        <a href="ins-outs.html">In/Out</a>
+        <a href="games.html" aria-current="page">Games</a>
+      </nav>
+    </header>
+
+    <main class="game-page">
+      <section class="game-intro" aria-label="Games introduction">
+        <p class="eyebrow dark-eyebrow">Natalie Trivia</p>
+        <h1>Two Truths and a Lie</h1>
+        <p>
+          Pick the lie in each round. The options shuffle every time, and the
+          leaderboard keeps each player's best percentage on this device.
+        </p>
+      </section>
+
+      <section class="game-layout" aria-label="Two truths and a lie quiz">
+        <article class="quiz-card">
+          <form class="player-form" id="player-form">
+            <label for="player-name">Player name</label>
+            <div class="player-form-row">
+              <input id="player-name" name="player-name" type="text" autocomplete="name" maxlength="32" required>
+              <button type="submit">Start</button>
+            </div>
+          </form>
+
+          <div class="quiz-panel" id="quiz-panel" hidden>
+            <div class="quiz-meta">
+              <p id="question-counter">Question 1 / 10</p>
+              <p id="running-score">0 correct</p>
+            </div>
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quiz-progress-bar"></span>
+            </div>
+            <h2 id="question-title">Find the lie.</h2>
+            <div class="option-list" id="option-list"></div>
+            <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+            <button class="next-question" id="next-question" type="button" disabled>Next</button>
+          </div>
+
+          <div class="result-panel" id="result-panel" hidden>
+            <p class="detail-label">Final Score</p>
+            <h2 id="result-score">0%</h2>
+            <p id="result-detail"></p>
+            <button id="play-again" type="button">Play Again</button>
+          </div>
+        </article>
+
+        <aside class="leaderboard-card" aria-label="Leaderboard">
+          <div class="leaderboard-header">
+            <div>
+              <p class="detail-label">Leaderboard</p>
+              <h2>Best Scores</h2>
+            </div>
+            <button id="clear-leaderboard" type="button">Clear</button>
+          </div>
+          <ol class="leaderboard-list" id="leaderboard-list"></ol>
+          <p class="empty-leaderboard" id="empty-leaderboard">No scores yet.</p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="games.js"></script>
+  </body>
+</html>
