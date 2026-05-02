@@ -832,6 +832,31 @@ h1 {
     min-height: 180px;
   }
 
+  .in-out-wrap {
+    overflow-x: visible;
+  }
+
+  .in-out-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .in-out-table th,
+  .in-out-table td {
+    padding: 0.85rem 0.65rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .in-out-table th {
+    font-size: clamp(1.8rem, 11vw, 3.2rem);
+  }
+
+  .in-out-table td {
+    font-size: clamp(0.86rem, 3.7vw, 1rem);
+    line-height: 1.35;
+  }
+
   .gallery-grid {
     column-count: 2;
     column-gap: 0.75rem;
